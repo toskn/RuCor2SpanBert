@@ -1,3 +1,21 @@
+# Modified
+### rucor2conll
+Corpus from [RuCor](http://rucoref.maimbava.net/) and script to convert it to CoNNLL format (modified from @lubakit [script](https://github.com/lubakit/pm_coreference_resolution/blob/b19e2004ba5dd13cfe08f5ff1227c5c9a6e30645/bin/rucor2conll.py))
+### other files
+[`requirements.txt`](/requirements.txt): 
+* update to `MarkupSafe==1.1.1`
+* comment out `## scikit-learn==0.19.1` and `## scipy==1.0.0`
+* add `tensorflow == 1.14.0`
+
+[`minimize.py`](/minimize.py):
+* comment out all `assert`
+* fix `get_document()` by adding missing `stats` argument
+* fix encoding for Russian by adding `encoding='utf-8'` and `ensure_ascii=False`
+
+[`setup_all.sh`](/setup_all.sh):
+* fix by removing `-D_GLIBCXX_USE_CXX11_ABI=0` flag
+
+
 # BERT and SpanBERT for Coreference Resolution
 This repository contains code and models for the paper, [BERT for Coreference Resolution: Baselines and Analysis](https://arxiv.org/abs/1908.09091). Additionally, we also include the coreference resolution model from the paper [SpanBERT: Improving Pre-training by Representing and Predicting Spans](https://arxiv.org/abs/1907.10529), which is the current state of the art on OntoNotes (79.6 F1). Please refer to the [SpanBERT repository](https://github.com/facebookresearch/SpanBERT) for other tasks.
 
@@ -27,7 +45,7 @@ Please download following files to use the *pretrained coreference models* on yo
 
 ### Setup for training
 This assumes access to OntoNotes 5.0.
-`./setup_training.sh <ontonotes/path/ontonotes-release-5.0> $data_dir`. This preprocesses the OntoNotes corpus, and downloads the original (not finetuned on OntoNotes) BERT models which will be finetuned using `train.py`. 
+`./setup_training.sh <ontonotes/path/ontonotes-release-5.0> $data_dir`. This preprocesses the OntoNotes corpus, and downloads the original (not finetuned on OntoNotes) BERT models which will be finetuned using `train.py`.
 
 * Experiment configurations are found in `experiments.conf`. Choose an experiment that you would like to run, e.g. `bert_base`
 * Note that configs without the prefix `train_` load checkpoints already tuned on OntoNotes.
