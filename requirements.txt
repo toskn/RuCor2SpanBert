@@ -30,8 +30,8 @@ PyStanfordDependencies==0.3.1
 python-dateutil==2.6.1
 pytz==2017.3
 s3transfer==0.1.13
-scikit-learn==0.19.1
-scipy==1.0.0
+## scikit-learn==0.19.1
+## scipy==1.0.0
 six==1.12.0
 tensorboard==1.14.0
 tensorflow-estimator==1.14.0
