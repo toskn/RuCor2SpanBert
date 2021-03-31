@@ -1,4 +1,8 @@
 # Modified
+
+## main code
+All the code for getting the final data is in this [notebook](/conll2spanbert.ipynb)
+
 ### rucor2conll
 Corpus from [RuCor](http://rucoref.maimbava.net/) and script to convert it to CoNNLL format (modified from @lubakit [script](https://github.com/lubakit/pm_coreference_resolution/blob/b19e2004ba5dd13cfe08f5ff1227c5c9a6e30645/bin/rucor2conll.py))
 ### other files
